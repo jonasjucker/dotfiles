@@ -21,6 +21,8 @@ elif [[ "${HOSTNAME}" == eu* ]]; then
     else
         if [ -f /etc/bashrc ]; then
             . /etc/bashrc
+            . /cluster/apps/local/env2lmod.sh
+            module load openjdk/17.0.0_35
         fi
         return
     fi
