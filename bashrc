@@ -13,6 +13,8 @@ elif [[ "${HOSTNAME}" == daint* ]]; then
     BASHRC_HOST='daint'
 elif [[ "${HOSTNAME}" == dom* ]]; then 
     BASHRC_HOST='dom'
+elif [[ "${HOSTNAME}" == balfrin* ]]; then 
+    BASHRC_HOST='balfrin'
 elif [[ "${HOSTNAME}" == eu* ]]; then 
     if tty -s; then
         BASHRC_HOST='euler'
@@ -127,6 +129,15 @@ elif [[ "${BASHRC_HOST}" == "daint" ]]; then
     alias hh='cd /users/juckerj/'
     alias jenkins='cd /scratch/snx3000/jenkins/workspace'
     alias touch-spack='touch_all /scratch/snx3000/juckerj/SPACK-INSTALL'
+
+# balfrin
+elif [[ "${BASHRC_HOST}" == "balfrin" ]]; then
+    alias sc='cd /scratch/e1000/meteoswiss/scratch/juckerj'
+    alias aall="scancel -u juckerj"
+    alias sq='squeue -u juckerj'
+    alias squ='squeue'
+    alias hh='cd /users/juckerj/'
+    alias jenkins='cd /scratch/e1000/meteoswiss/scratch/jenkins'
 
 # dom
 elif [[ "${BASHRC_HOST}" == "dom" ]]; then
