@@ -13,13 +13,19 @@ elif [[ "${HOSTNAME}" == daint* ]]; then
     BASHRC_HOST='daint'
 elif [[ "${HOSTNAME}" == dom* ]]; then 
     BASHRC_HOST='dom'
+elif [[ "${HOSTNAME}" == balfrin* ]]; then 
+    BASHRC_HOST='balfrin'
 elif [[ "${HOSTNAME}" == eu* ]]; then 
-
     if tty -s; then
         BASHRC_HOST='euler'
 
-    # do nothing for me as Jenkins user
+    # Source global definitions as Jenkins user
     else
+        if [ -f /etc/bashrc ]; then
+            . /etc/bashrc
+            . /cluster/apps/local/env2lmod.sh
+            module load openjdk/17.0.0_35
+        fi
         return
     fi
 elif [[ "${HOSTNAME}" == *levante* ]]; then 
@@ -125,6 +131,15 @@ elif [[ "${BASHRC_HOST}" == "daint" ]]; then
     alias jenkins='cd /scratch/snx3000/jenkins/workspace'
     alias touch-spack='touch_all /scratch/snx3000/juckerj/SPACK-INSTALL'
 
+# balfrin
+elif [[ "${BASHRC_HOST}" == "balfrin" ]]; then
+    alias sc='cd /scratch/e1000/meteoswiss/scratch/juckerj'
+    alias aall="scancel -u juckerj"
+    alias sq='squeue -u juckerj'
+    alias squ='squeue'
+    alias hh='cd /users/juckerj/'
+    alias jenkins='cd /scratch/e1000/meteoswiss/scratch/jenkins'
+
 # dom
 elif [[ "${BASHRC_HOST}" == "dom" ]]; then
     alias srcspack="source $SPACK_ROOT/share/spack/setup-env.sh"
@@ -140,19 +155,10 @@ elif [[ "${BASHRC_HOST}" == "euler" ]]; then
     alias srcspack="source $SPACK_ROOT/share/spack/setup-env.sh"
     alias spak="spack  --config-scope=${HOME}/.spack/$BASHRC_HOST"
     alias sc='cd /cluster/scratch/juckerj/'
-    alias aall="bkill 0"
+    alias aall="scancel -u juckerj"
     alias hh='cd /cluster/home/juckerj/'
-    alias sq='bjobs'
-    alias squ='bbjobs'
-
-# mistral
-elif [[ "${BASHRC_HOST}" == "mistral" ]]; then
-    alias aall="scancel -u b381001"
-    alias sq='squeue -u b381001'
+    alias sq='squeue -u juckerj'
     alias squ='squeue'
-    alias hh='cd /pf/b/b381001'
-    alias sc='cd /scratch/b/b381001'
-    alias jenkins='cd /mnt/lustre01/scratch/b/b380729/workspace'
 
 # levante
 elif [[ "${BASHRC_HOST}" == "levante" ]]; then
