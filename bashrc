@@ -77,6 +77,7 @@ if [[ "${BASHRC_HOST}" == "tsa" ]]; then
 # daint
 elif [[ "${BASHRC_HOST}" == "daint" ]]; then
     test -s /etc/bash_completion.d/git.sh && . /etc/bash_completion.d/git.sh || true
+    export PATH=/users/juckerj/fortls/bin:$PATH
 
 elif [[ "${BASHRC_HOST}" == "levante" ]]; then
     module load git
@@ -209,6 +210,9 @@ alias gpo='git push origin'
 
 #vim
 alias vims='vim -S Session.vim'
+
+#spack
+alias spap="spack env activate"
 
 # helper functions
 
