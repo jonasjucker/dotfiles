@@ -89,6 +89,8 @@ elif [[ "${BASHRC_HOST}" == "levante" ]]; then
     module load git
 elif [[ "${BASHRC_HOST}" == "euler" ]]; then
     export PATH=${PATH}:~/.local/bin
+elif [[ "${BASHRC_HOST}" == "balfrin" ]]; then
+    export PATH=${PATH}:~/.local/bin
 fi
 
 # Spack
