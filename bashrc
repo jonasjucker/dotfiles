@@ -97,8 +97,6 @@ fi
 
 # tsa
 if [[ "${BASHRC_HOST}" == "tsa" ]]; then
-    alias srcspack="source $SPACK_ROOT/share/spack/setup-env.sh"
-    alias spak="spack  --config-scope=${HOME}/.spack/$BASHRC_HOST"
     alias sc='cd /scratch/juckerj/'
     alias aall="scancel -u juckerj"
     alias sq='squeue -u juckerj'
@@ -107,16 +105,12 @@ if [[ "${BASHRC_HOST}" == "tsa" ]]; then
 
 # daint
 elif [[ "${BASHRC_HOST}" == "daint" ]]; then
-    alias srcspack="source $SPACK_ROOT/share/spack/setup-env.sh"
-    alias spak="spack  --config-scope=${HOME}/.spack/$BASHRC_HOST"
-    alias spakdbg="spack  --config-scope=${HOME}/.spack/debug"
     alias sc='cd /scratch/snx3000/juckerj/'
     alias aall="scancel -u juckerj"
     alias sq='squeue -u juckerj'
     alias squ='squeue'
     alias hh='cd /users/juckerj/'
     alias jenkins='cd /scratch/snx3000/jenkins/workspace'
-    alias touch-spack='touch_all /scratch/snx3000/juckerj/SPACK-INSTALL'
 
 # balfrin
 elif [[ "${BASHRC_HOST}" == "balfrin" ]]; then
@@ -129,8 +123,6 @@ elif [[ "${BASHRC_HOST}" == "balfrin" ]]; then
 
 # dom
 elif [[ "${BASHRC_HOST}" == "dom" ]]; then
-    alias srcspack="source $SPACK_ROOT/share/spack/setup-env.sh"
-    alias spak="spack  --config-scope=${HOME}/.spack/$BASHRC_HOST"
     alias sc='cd /scratch/snx3000tds/juckerj/'
     alias aall="scancel -u juckerj"
     alias sq='squeue -u juckerj'
@@ -139,8 +131,6 @@ elif [[ "${BASHRC_HOST}" == "dom" ]]; then
 
 # euler
 elif [[ "${BASHRC_HOST}" == "euler" ]]; then
-    alias srcspack="source $SPACK_ROOT/share/spack/setup-env.sh"
-    alias spak="spack  --config-scope=${HOME}/.spack/$BASHRC_HOST"
     alias sc='cd /cluster/scratch/juckerj/'
     alias aall="scancel -u juckerj"
     alias hh='cd /cluster/home/juckerj/'
