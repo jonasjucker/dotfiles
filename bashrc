@@ -93,21 +93,6 @@ elif [[ "${BASHRC_HOST}" == "balfrin" ]]; then
     export PATH=${PATH}:~/.local/bin
 fi
 
-# Spack
-case ${BASHRC_HOST} in
-      tsa) 
-          export SPACK_ROOT=/project/g110/spack/user/tsa/spack 
-          ;;
-      daint) 
-          export SPACK_ROOT=/project/g110/spack/user/daint/spack
-          ;;
-      dom) 
-          export SPACK_ROOT=/project/g110/spack/user/dom/spack 
-          ;;
-      *)
-          echo bashrc: Spack not available on $BASHRC_HOST!
-esac
-
 # Machine specific aliases
 
 # tsa
