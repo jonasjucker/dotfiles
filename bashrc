@@ -240,3 +240,10 @@ scp_from_daint() {
 
     scp -r -o ProxyCommand="ssh -W %h:%p juckerj@ela.cscs.ch" juckerj@daint.cscs.ch:$1 $2
 }
+
+mount_uenv(){
+    squashfs-mount /capstor/scratch/cscs/juckerj/starting_scripts/vial-v1.0.squashfs:/user-environment -- bash
+}
+use_mods(){
+    module use /user-environment/modules
+}
