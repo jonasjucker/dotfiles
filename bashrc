@@ -15,7 +15,7 @@ elif [[ "${HOSTNAME}" == dom* ]]; then
     BASHRC_HOST='dom'
 elif [[ "${HOSTNAME}" == balfrin* ]]; then 
     BASHRC_HOST='balfrin'
-elif [[ "${CLSUTER_NAME}" == vial* ]]; then 
+elif [[ "${CLUSTER_NAME}" == vial* ]]; then 
     BASHRC_HOST='vial'
 elif [[ "${HOSTNAME}" == eu* ]]; then 
     if tty -s; then
