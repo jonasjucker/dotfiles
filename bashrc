@@ -93,6 +93,7 @@ elif [[ "${BASHRC_HOST}" == "euler" ]]; then
     export PATH=${PATH}:~/.local/bin
 elif [[ "${BASHRC_HOST}" == "balfrin" ]]; then
     export PATH=${PATH}:~/.local/bin
+    export MODULEPATH=/mch-environment/v5/modules:/usr/share/modules:/usr/share/Modules/$MODULE_VERSION/modulefiles:/usr/share/modules/modulefiles
 fi
 
 # Machine specific aliases
@@ -116,7 +117,7 @@ elif [[ "${BASHRC_HOST}" == "daint" ]]; then
 
 # balfrin
 elif [[ "${BASHRC_HOST}" == "balfrin" ]]; then
-    alias sc='cd /scratch/e1000/meteoswiss/scratch/juckerj'
+    alias sc='cd /scratch/mch/juckerj'
     alias aall="scancel -u juckerj"
     alias sq='squeue -u juckerj'
     alias squ='squeue'
