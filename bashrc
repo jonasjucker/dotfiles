@@ -15,8 +15,6 @@ elif [[ "${HOSTNAME}" == dom* ]]; then
     BASHRC_HOST='dom'
 elif [[ "${HOSTNAME}" == balfrin* ]]; then 
     BASHRC_HOST='balfrin'
-elif [[ "${CLUSTER_NAME}" == vial* ]]; then 
-    BASHRC_HOST='vial'
 elif [[ "${HOSTNAME}" == eu* ]]; then 
     if tty -s; then
         BASHRC_HOST='euler'
@@ -25,8 +23,7 @@ elif [[ "${HOSTNAME}" == eu* ]]; then
     else
         if [ -f /etc/bashrc ]; then
             . /etc/bashrc
-            . /cluster/apps/local/env2lmod.sh
-            module load openjdk/17.0.0_35
+            module load stack openjdk
         fi
         return
     fi
@@ -123,14 +120,6 @@ elif [[ "${BASHRC_HOST}" == "balfrin" ]]; then
     alias squ='squeue'
     alias hh='cd /users/juckerj/'
     alias jenkins='cd /scratch/e1000/meteoswiss/scratch/jenkins'
-
-# vial
-elif [[ "${BASHRC_HOST}" == "vial" ]]; then
-    alias sc='cd /capstor/scratch/cscs/juckerj'
-    alias aall="scancel -u juckerj"
-    alias sq='squeue -u juckerj'
-    alias squ='squeue'
-    alias hh='cd /users/juckerj/'
 
 # dom
 elif [[ "${BASHRC_HOST}" == "dom" ]]; then
@@ -242,9 +231,6 @@ scp_from_daint() {
     scp -r -o ProxyCommand="ssh -W %h:%p juckerj@ela.cscs.ch" juckerj@daint.cscs.ch:$1 $2
 }
 
-mount_uenv(){
-    squashfs-mount /capstor/scratch/cscs/juckerj/starting_scripts/vial-v1.0.squashfs:/user-environment -- bash
-}
 use_mods(){
     module use /user-environment/modules
 }
