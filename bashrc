@@ -90,7 +90,7 @@ elif [[ "${BASHRC_HOST}" == "euler" ]]; then
     export PATH=${PATH}:~/.local/bin
 elif [[ "${BASHRC_HOST}" == "balfrin" ]]; then
     export PATH=${PATH}:~/.local/bin
-    export MODULEPATH=/mch-environment/v5/modules:/usr/share/modules:/usr/share/Modules/$MODULE_VERSION/modulefiles:/usr/share/modules/modulefiles
+    export MODULEPATH=/mch-environment/v6/modules:/usr/share/modules:/usr/share/Modules/$MODULE_VERSION/modulefiles:/usr/share/modules/modulefiles
 fi
 
 # Machine specific aliases
