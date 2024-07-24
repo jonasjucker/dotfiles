@@ -196,6 +196,7 @@ alias vims='vim -S Session.vim'
 
 #spack
 alias spap="spack env activate"
+alias clone_spack="git clone --recurse-submodules --shallow-submodules git@github.com:C2SM/spack-c2sm.git"
 
 # helper functions
 
