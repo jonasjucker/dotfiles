@@ -13,6 +13,8 @@ elif [[ "${HOSTNAME}" == daint* ]]; then
     BASHRC_HOST='daint'
 elif [[ "${HOSTNAME}" == dom* ]]; then 
     BASHRC_HOST='dom'
+elif [[ "${HOSTNAME}" == todi* ]]; then 
+    BASHRC_HOST='todi'
 elif [[ "${HOSTNAME}" == balfrin* ]]; then 
     BASHRC_HOST='balfrin'
 elif [[ "${HOSTNAME}" == eu* ]]; then 
@@ -111,6 +113,13 @@ elif [[ "${BASHRC_HOST}" == "daint" ]]; then
     alias squ='squeue'
     alias hh='cd /users/juckerj/'
     alias jenkins='cd /scratch/snx3000/jenkins/workspace'
+
+elif [[ "${BASHRC_HOST}" == "todi" ]]; then
+    alias sc='cd /capstor/scratch/cscs/juckerj'
+    alias aall="scancel -u juckerj"
+    alias sq='squeue -u juckerj'
+    alias squ='squeue'
+    alias hh='cd /users/juckerj/'
 
 # balfrin
 elif [[ "${BASHRC_HOST}" == "balfrin" ]]; then
