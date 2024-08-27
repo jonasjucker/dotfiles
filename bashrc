@@ -120,6 +120,7 @@ elif [[ "${BASHRC_HOST}" == "todi" ]]; then
     alias sq='squeue -u juckerj'
     alias squ='squeue'
     alias hh='cd /users/juckerj/'
+    alias srcuenv='source ~/.local/bin/activate-uenv'
 
 # balfrin
 elif [[ "${BASHRC_HOST}" == "balfrin" ]]; then
